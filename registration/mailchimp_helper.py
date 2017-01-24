@@ -24,11 +24,29 @@ def add_member(form):
 
 
 def update_member(data):
-    instance = get_object_or_404(Registree, chimp_id=data.get('data[id]'))
-    instance.email = data.get('data[email]')
-    instance.name = data.get('data[merges][NAME]')
-    instance.university = data.get('data[merges][UNI]')
+    try:
+        instance = Registree.objects.get(chimp_id=data.get('data[id]'))
+    except:
+        instance = get_object_or_404(Registree, email=data.get('data[old_email]'))
 
-    instance.save()
+    if data.get('type') == 'subscribe':
+        instance.status = 'subscribed'
+        instance.save()
+        print('Subscribed, ' + instance.email)
 
-    print('Updated, ' + instance.email)
+    if data.get('type') == 'profile':
+        instance.email = data.get('data[email]')
+        instance.name = data.get('data[merges][NAME]')
+        instance.university = data.get('data[merges][UNI]')
+        instance.save()
+        print('Updated, ' + instance.email)
+
+    if data.get('type') == 'unsubscribe':
+        instance.delete()
+        print('Unsubscribed, ' + instance.email)
+
+    if data.get('type') == 'upemail':
+        instance.email = data.get('data[new_email]')
+        instance.chimp_id = data.get('data[new_id]')
+        instance.save()
+        print('Email changed, ' + data.get('data[old_email]') + ' to ' + instance.email)

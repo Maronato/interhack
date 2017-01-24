@@ -21,3 +21,7 @@ class Registree(models.Model):
     other = models.CharField(max_length=42, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     chimp_id = models.CharField(max_length=42, default='')
+    status = models.CharField(max_length=42, default='pending')
+
+    def __str__(self):
+        return self.email
