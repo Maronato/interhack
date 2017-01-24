@@ -1,0 +1,7 @@
+{
+  "name": "OpenVote",
+  "description": "State-of-the-art online voting system for Unicamp students",
+  "repository": "https://github.com/Maronato/OpenVote",
+  "keywords": ["python", "django", "Vote" ],
+  "addons": [ "heroku-postgresql" ]
+}

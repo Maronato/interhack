@@ -1,0 +1,33 @@
+<section id="register">
+    <div class="content">
+        <h2>Pré Inscrição </h2>
+        <p>Curtiu bastante a ideia? Garanta o seu lugar no InterHack fazendo a pré inscrição abaixo.</p>
+        <p>Todos que estiverem inscritos terão prioridade caso precisemos limitar o número de participantes. Você também receberá anúncios importantes sobre o hackathon, como as datas e a programação.</p>
+        <p>Não se preocupe. Só enviaremos emails que sabemos serem de seu interesse e nunca distribuiremos seu email para terceiros sem seu consentimento.</p>
+        <form action="{% url 'pre-reg' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <div style="text-align: left;">
+                    <label for="email">{{ form.name.label }}</label>
+                </div>
+                {{ form.name}}
+            </div>
+            <div >
+                <div style="text-align: left;">
+                    <label for="email">{{ form.email.label }}</label>
+                </div>
+                {{ form.email }}
+            </div>
+            <div >
+                <div style="text-align: left;">
+                    <label for="email">{{ form.university.label }}</label>
+                </div>
+                {{ form.university }}
+            </div>
+
+            <input type="submit" value="Submit" />
+        </form>
+        <h3>Quer ajudar a gente?</h3>
+        <p>Que tal nos ajudar a fazer o InterHack ser legen(dary) respondendo algumas perguntas? Não perguntamos nada pessoal e tudo é anônimo pelo Google Forms. <a href="https://goo.gl/forms/KReG771VcmOaiX3c2" style="color: #BF5A34;">Clique aqui!</a>
+    </div>
+</section>

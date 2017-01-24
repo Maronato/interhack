@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/grid.css' %}">
+    <script type='text/javascript' src="{% static 'main/js/particleground.js' %}"></script>
+    <title>InterHack v1</title>
+</head>
+
+<body>
+    <ul id="main-menu">
+        <li class="mobile menu-control" onClick="toggleMenu()">
+            <svg width="16" height="10">
+                <polygon fill="white" points="0,0 16,0 8,10"/>
+            </svg>
+        </li>
+        <li class="menu-item"><a href="#about">Sobre</a></li>
+        <li class="menu-item"><a href="#faq">FAQ</a></li>
+        <li class="menu-item"><a href="#register">Pré Inscrições</a></li>
+    </ul>
+    <header id="main-header">
+        <div class="header-content-wrapper">
+            <img class="logo" src="{% static 'main/img/logo.png' %}">
+            <img class="logotext" src="{% static 'main/img/name.png' %}">
+            <span class="header-info">
+                <b>Hackathon Interuniversitário</b><br>
+                Unicamp
+            </span>
+            <div class="header-info">
+                {% if messages %}
+                {% for message in messages %}
+                <h3>{{ message }}</h3>
+                {% endfor %}
+                {% else %}
+                <div class="header-button-wrapper">
+                    <a href="#register"> <button href="">Pré Inscrição</button></a>
+                </div>
+                {% endif %}
+            </div>
+        </header>
+
+        {% include 'main/sections/about.html' %}
+        {% include 'main/sections/faq.html' %}
+        {% include 'main/sections/pre_reg.html' %}
+        <!-- {% include 'main/sections/location.html' %} -->
+        <!-- {% include 'main/sections/schedule.html' %} -->
+        <!-- {% include 'main/sections/sponsors.html' %} -->
+
+
+
+
+
+        <footer id="main-footer">
+            Made with &lt;3 &nbsp; - &nbsp;
+            <a href="https://github.com">Github</a>
+            &nbsp;-&nbsp;<a href="#" onClick="cats()">&#9679;</a>
+        </footer>
+    </body>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD70GNb2FLOz3cVO-LpF0Jjk8STZgGZKX0"></script>
+
+    <script type="text/javascript" src="{% static 'main/js/menu_scroll.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/fade_header.js' %}"></script>
+    <!-- <script type="text/javascript" src="{% static 'main/js/location.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'main/js/cats.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/sponsoranimation.js' %}"></script>
+
+    </html>
+    <!-- 63 6f 70 79 77 72 69 74 65 64 20 62 79 20 79 6f 75 72 20 6d 75 6d -->
