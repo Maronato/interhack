@@ -12,7 +12,8 @@ list_id = settings.CHIMP_LIST
 def add_member(form):
     fields = {
         'NAME': form.cleaned_data['name'],
-        'UNI': form.cleaned_data['university']
+        'UNI': form.cleaned_data['university'],
+        'OTHER': form.cleaned_data['other']
     }
     print(form.cleaned_data['university'])
 
