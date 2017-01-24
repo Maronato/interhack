@@ -9,8 +9,10 @@ class PreRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = Registree
-        fields = ['name', 'email', 'university']
+        fields = ['name', 'email', 'university', 'other']
         labels = {
             'name': 'Nome',
             'university': 'Universidade',
+            'other': 'Qual?'
         }
+        widgets = {'other': forms.HiddenInput()}

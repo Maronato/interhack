@@ -184,7 +184,7 @@ i {
 }
 
 .header-button-wrapper button, input[type="submit"] {
-    font: 0.8em 'Source Sans Pro', sans-serif;
+    font: 1em 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     padding: 10px 15px;
@@ -262,7 +262,7 @@ i {
 }
 
 @media screen and (max-width: 768px) and (min-width: 640px){
-    #register input[type=text], select, input[type=email] {
+    #register input[type=text], input[type=email] {
         font-size: 20px;
         width: 70%;
     }
@@ -270,16 +270,24 @@ i {
         font-size: 18px;
         margin-left: 15%;
     }
+    #register select {
+        font-size: 20px;
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    #register input[type=text], select, input[type=email] {
+    #register input[type=text], input[type=email] {
         font-size: 18px;
         width: 100%;
     }
     #register label {
         font-size: 16px;
         margin-left: 0%;
+    }
+    #register select {
+        font-size: 18px;
+        width: 100%;
     }
 }
 
