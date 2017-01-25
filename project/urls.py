@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^update/$', registration.views.mailchimp_update, name='update'),
     url(r'^$', main.views.index, name='index'),
     url(r'^registration/$', registration.views.pre_registration, name='pre-reg'),
-    url(r'^\.well-known/acme-challenge/0iTD0Vg-XGlO1M-MeBvaMgbuut8PjwenjP4DgV2xrlA', TemplateView.as_view(template_name="ssl.html")),
+    url(r'^\.well-known/acme-challenge/0iTD0Vg-XGlO1M-MeBvaMgbuut8PjwenjP4DgV2xrlA', TemplateView.as_view(template_name="main/ssl.html")),
 ]
