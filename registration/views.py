@@ -23,7 +23,7 @@ def pre_registration(request):
             try:
                 instance.chimp_id = add_member(form)
                 instance.save()
-                messages.add_message(request, messages.SUCCESS, 'Inscrição realizada com sucesso!')
+                messages.add_message(request, messages.SUCCESS, 'Pedido de inscrição realizado! Cheque seu email para confirmar.')
             except:
                 instance.delete()
                 messages.add_message(request, messages.SUCCESS, 'Oops! Não foi possível realizar sua inscrição!')
