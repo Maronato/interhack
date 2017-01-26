@@ -22,7 +22,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^update/$', registration.views.mailchimp_update, name='update'),
-    url(r'^$', main.views.index, name='index'),
+    url(r'^(referral/(?P<referee_id>\w+)/)?$', main.views.index, name='index'),
     url(r'^registration/$', registration.views.pre_registration, name='pre-reg'),
     url(r'^\.well-known/acme-challenge/hI7WcSft0kG-Qr4r52TLnHr7atSkmStg3qRXATYCJQI', TemplateView.as_view(template_name="main/ssl.html")),
 ]

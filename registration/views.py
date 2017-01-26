@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .mailchimp_helper import add_member, update_member
+from .mailchimp_helper import add_member, update_member_local
 from main.forms import PreRegistrationForm
 # Create your views here.
 
@@ -20,8 +20,12 @@ def pre_registration(request):
             # Aplly it
             instance = form.save()
 
+            # Set referee, if exists
+            form.set_referee()
+
+            # Try to add the new member to mailchimp
             try:
-                instance.chimp_id = add_member(form)
+                instance.chimp_id = add_member(form, instance.id)
                 instance.save()
                 messages.add_message(request, messages.SUCCESS, 'Pedido de inscrição realizado! Cheque seu email para confirmar.')
             except:
@@ -41,5 +45,5 @@ def pre_registration(request):
 @csrf_exempt
 def mailchimp_update(request):
     if request.method == 'POST':
-        update_member(request.POST)
+        update_member_local(request.POST)
     return HttpResponse('')

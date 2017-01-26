@@ -9,11 +9,12 @@ client = MailChimp(username, key)
 list_id = settings.CHIMP_LIST
 
 
-def add_member(form):
+def add_member(form, dj_id):
     fields = {
         'NAME': form.cleaned_data['name'],
         'UNI': form.cleaned_data['university'],
-        'OTHER': form.cleaned_data['other']
+        'OTHER': form.cleaned_data['other'],
+        'DJ_ID': dj_id
     }
     print(form.cleaned_data['university'])
 
@@ -23,7 +24,7 @@ def add_member(form):
     return response['unique_email_id']
 
 
-def update_member(data):
+def update_member_local(data):
     try:
         instance = Registree.objects.get(chimp_id=data.get('data[id]'))
     except:
@@ -50,3 +51,7 @@ def update_member(data):
         instance.chimp_id = data.get('data[new_id]')
         instance.save()
         print('Email changed, ' + data.get('data[old_email]') + ' to ' + instance.email)
+
+
+def update_member_remote(member, key, value):
+    client.lists.members.update(list_id=list_id, subscriber_hash=member.email, data={'merge_fields': {key: value}})

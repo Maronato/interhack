@@ -6,6 +6,7 @@
         <br>
         <form action="{% url 'pre-reg' %}" method="post">
             {% csrf_token %}
+            {{ form.referee }}
             <div style="text-align: left;">
                 <label for="email">{{ form.name.label }}</label>
             </div>

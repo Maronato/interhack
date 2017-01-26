@@ -20,6 +20,12 @@ class Registree(models.Model):
     other = models.CharField(max_length=42, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     chimp_id = models.CharField(max_length=42, default='')
+    referee = models.ForeignKey(
+        "Registree",
+        on_delete=models.CASCADE,
+        related_name='references',
+        null=True
+    )
     status = models.CharField(max_length=42, default='pending')
 
     def __str__(self):
