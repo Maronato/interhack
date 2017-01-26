@@ -3,6 +3,6 @@ from .forms import PreRegistrationForm
 # Create your views here.
 
 
-def index(request, referee_id=""):
+def index(request, referee_id="-1"):
     form = PreRegistrationForm(initial={'referee': referee_id})
     return render(request, 'main/index.html', {'form': form})

@@ -6,7 +6,7 @@ class PreRegistrationForm(forms.ModelForm):
     """PreRegistrationForm
     Base form for the pre-registration of users
     """
-    referee = forms.CharField(widget=forms.HiddenInput())
+    referee = forms.CharField(widget=forms.HiddenInput(), initial="-1")
 
     class Meta:
         model = Registree
