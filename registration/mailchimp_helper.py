@@ -16,7 +16,6 @@ def add_member(form, dj_id):
         'OTHER': form.cleaned_data['other'],
         'DJ_ID': dj_id
     }
-    print(form.cleaned_data['university'])
 
     email = form.cleaned_data['email']
 
