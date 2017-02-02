@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <section id="sponsors">
     <div class="content">
         <h2>Nossos patrocinadores</h2>
@@ -5,19 +6,23 @@
 
 
         <div class="partners">
-            <a href="http://example.com" target="_blank">
+            <!-- <a href="http://example.com" target="_blank">
                 <div class="behave">
                     <img src="images/sponsors/big.svg"/ >
                 </div>
-            </a>
+            </a> -->
         </div>
         <div class="cooler_helpers">
-            <a href="http://example.com" target="_blank"><img src="images/sponsors/left.svg" class="l"/></a>
+            <!-- <a href="http://example.com" target="_blank"><img src="images/sponsors/left.svg" class="l"/></a>
             <a href="http://example.com" target="_blank"><img src="images/sponsors/middle.svg" class="m"/></a>
-            <a href="http://example.com" target="_blank"><img src="images/sponsors/right.svg" class="r"/></a><br>
+            <a href="http://example.com" target="_blank"><img src="images/sponsors/right.svg" class="r"/></a><br> -->
         </div>
         <div class="helpers">
-            <a href="http://example.com" target="_blank"><img src="images/sponsors/example.svg"/></a>
+            <h3>Apoio</h3>
+            <a href="http://www.senec.com.br/" target="_blank"><img src="{% static 'main/img/sponsors/senec.svg' %}"/></a>
+            <a href="https://www.facebook.com/semanadeengenharia.eletrica" target="_blank"><img src="{% static 'main/img/sponsors/see.svg' %}"/></a>
+            <a href="http://www.fog.icmc.usp.br/" target="_blank"><img src="{% static 'main/img/sponsors/fog.svg' %}"/></a>
+            <a href="http://www.secomp.com.br/" target="_blank"><img src="{% static 'main/img/sponsors/secomp.svg' %}"/></a>
         </div>
     </div>
 </section>

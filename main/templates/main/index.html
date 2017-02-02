@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/grid.css' %}">
 
     <!-- Load particle background -->
-    <!-- <script type='text/javascript' src="{% static 'main/js/particleground.js' %}"></script> -->
+    <script type='text/javascript' src="{% static 'main/js/particleground.js' %}"></script>
 
 </head>
 
@@ -71,11 +71,11 @@
         {% include 'main/sections/pre_reg.html' %}
         <!-- {% include 'main/sections/location.html' %} -->
         <!-- {% include 'main/sections/schedule.html' %} -->
-        <!-- {% include 'main/sections/sponsors.html' %} -->
+        {% include 'main/sections/sponsors.html' %}
 
         <footer id="main-footer">
-            Made with &lt;3 &nbsp; - &nbsp;
-            <a href="https://github.com/Maronato/interhack">Github</a>
+            Made with &lt;3 &nbsp; <!-- - &nbsp; -->
+            <!-- <a href="https://github.com/Maronato/interhack">Github</a> -->
             &nbsp;-&nbsp;<a href="#" onClick="cats()">&#9679;</a>
         </footer>
     </body>
@@ -96,7 +96,7 @@
     <script type="text/javascript" src="{% static 'main/js/cats.js' %}"></script>
 
     <!-- Make the sponsor's section all cool -->
-    <!-- <script type="text/javascript" src="{% static 'main/js/sponsoranimation.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'main/js/sponsoranimation.js' %}"></script>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
