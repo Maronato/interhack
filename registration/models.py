@@ -8,6 +8,7 @@ choices = (
     ('USPSP', 'USP - São Paulo'),
     ('USPSC', 'USP - São Carlos'),
     ('ITA', 'ITA'),
+    ('UFSCA', 'UFSCar'),
     ('OUTRA', 'Outra'),
 )
 
