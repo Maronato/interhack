@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^update/$', registration.views.mailchimp_update, name='update'),
     url(r'^(referral/(?P<referee_id>\w+)/)?$', main.views.index, name='index'),
     url(r'^registration/$', registration.views.pre_registration, name='pre-reg'),
-    url(r'^\.well-known/acme-challenge/KzB9zOzwjww1N_W7re_bNqct4m3tTRByFIAXX3YdnF8', TemplateView.as_view(template_name="main/ssl.html")),
+    url(r'^\.well-known/acme-challenge/oR8hZXliT87mpqUSHBqG4F1AtiUvFoIxr9laOzEwytA', TemplateView.as_view(template_name="main/ssl.html")),
     url(r'^MoreInfo/$', RedirectView.as_view(url="http://agency.bemyapp.com/insights/infographics-hackathon-figures-in-2016.html")),
 ]
